@@ -1,0 +1,132 @@
+%\documentclass[nonacm]{acmart}
+% \documentclass[manuscript,review,anonymous]{acmart}
+%\documentclass[sigconf,review,anonymous]{acmart}
+\documentclass[manuscript,review,anonymous]{acmart} 
+% \documentclass[manuscript]{acmart}
+\usepackage{graphicx}
+% Preserve ACM's native fonts under XeLaTeX/LuaLaTeX and Tectonic.
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+\fi
+\usepackage{subcaption}
+\usepackage{tabularx}
+
+% Keep inter-paragraph spacing natural on pages containing large floats.
+\raggedbottom
+\captionsetup[subfigure]{justification=centering}
+
+% newly addeddocumentclass
+\usepackage{makecell}
+\usepackage{multirow}
+% \usepackage{booktabs}   % NOTE: deployment table (Table~\ref{tab:sites}) uses
+%                         %       \toprule/\midrule/\bottomrule. acmart loads
+%                         %       booktabs by default; if your build complains,
+%                         %       uncomment this line.
+% \usepackage{array}
+\usepackage{xcolor}
+\usepackage[normalem]{ulem}
+% \usepackage{ulem}
+% \usepackage{amssymb}
+\usepackage{pifont}
+\newcommand{\cmark}{\ding{51}} 
+% OTHER CUSTOM COMMANDS
+\newcommand {\todo}[1]{\textcolor{red}{\textbf{TODO: {#1}}}}
+\newcommand {\note}[1]{\textcolor{purple}{Note: {#1}}}
+\newcommand {\MS}[1]{\textcolor{purple}{MS: {#1}}}
+% \newcommand{\inlineheaderit}[1]{\textbf{\textit{#1}.}~}
+\newcommand{\eg}{\textit{e.g.,}~}
+\newcommand{\ie}{\textit{i.e.,}~}
+\newcommand{\vs}{\textit{vs}~}
+\newcommand{\pquote}[1]{{\textit{\textcolor{ACMDarkBlue}{``#1''}}}}
+\newcommand{\dquote}[1]{{``#1''}}
+
+\AtBeginDocument{%
+  \providecommand\BibTeX{{%
+    Bib\TeX}}}
+
+% \setcopyright{acmlicensed}
+% \copyrightyear{2025}
+% \acmYear{2025}
+% \acmDOI{XXXXXXX.XXXXXXX}
+
+%% These commands are for a PROCEEDINGS abstract or paper.
+% \acmConference[CHI '26]{Proceedings of the CHI Conference on Human Factors in Computing Systems}{13-16 April 2026}{Barcelona, Spain}
+
+
+\copyrightyear{2027}
+\acmYear{2027}
+\setcopyright{acmlicensed}
+%\setcctype{by}
+\acmConference[CHI '27]{Proceedings of the 2027 CHI Conference on Human Factors in Computing Systems}{May 10--14, 2027}{Pittsburgh, PA, USA}
+\acmBooktitle{Proceedings of the 2027 CHI Conference on Human Factors in Computing Systems (CHI '27), May 10--14, 2027, Pittsburgh, PA, USA}
+% NOTE: DOI/ISBN are assigned by ACM on acceptance. The values previously here
+%       (10.1145/3772318.3791891 / 979-8-4007-2278-3) belonged to a different
+%       paper and were pasted in by mistake --- do not restore them.
+\acmDOI{XXXXXXX.XXXXXXX}
+\acmISBN{XXX-X-XXXX-XXXX-X/XX/XX}
+  
+\begin{document}
+
+\title[Same Trashbot, Different Streets]{Same Trashbot, Different Streets: Local Legibility in Cross-Community Public Robot Deployment}
+
+% Author information omitted for anonymous review.
+\author{Anonymous Authors}
+
+%%
+%% The abstract is a short summary of the work to be presented in the
+%% article.
+\begin{abstract}
+Public service robots increasingly appear in shared public spaces, where people must read their actions and work out how these systems fit within the surrounding setting. We conducted a qualitative field study using two mobile Trashbots as design probes across five deployment sites in New York City's five boroughs. Across 22 field days, the Trashbots encountered approximately 490 people. We collected 86 post-encounter interview records involving 115 people from five sites in the comparative analysis. Participants made sense of the robots' presence through question-driven and reasoning-based strategies. They asked what the robots were for, how they worked, and who was responsible for them, while also developing interpretations through inference, projection, and comparison. How participants read the robots' actions was influenced by situated knowledge of the encounter site and by personal experience with privacy, robots, and related technologies. We use these findings to develop the concept of \emph{local legibility}, which describes how a public service robot becomes understandable in relation to the place where people encounter it. This perspective directs attention to how deployments communicate the robot's purpose, responsibility, sensing practices, and relation to services already present at the site.
+\end{abstract}
+
+\begin{CCSXML}
+<ccs2012>
+   <concept>
+       <concept_id>10003120.10003123.10010860.10010911</concept_id>
+       <concept_desc>Human-centered computing~Participatory design</concept_desc>
+       <concept_significance>500</concept_significance>
+       </concept>
+ </ccs2012>
+\end{CCSXML}
+
+\ccsdesc[500]{Human-centered computing~Participatory design}
+\keywords{human-robot interaction, public space, service robots, sensemaking, situated action, field deployment, local legibility}
+% \note{adjust keyword list to taste}
+
+%% Teaser figure: appears between the author block and the abstract.
+\begin{teaserfigure}
+  \centering
+  \includegraphics[width=\textwidth]{figures/teaser_mape.png}
+  \caption{Trashbot deployments across New York City's five boroughs. The callouts show one deployment setting in each borough: (a)~Staten Island, (b)~Brooklyn, (c)~Manhattan, (d)~Queens, and (e)~the Bronx. Basemap \textcopyright{} OpenStreetMap contributors, \textcopyright{} CARTO.}
+  \Description{A map of New York City with five photographic callouts, one for each borough. The callouts show TrashBots in a park in Staten Island, a seating area at the Brooklyn Navy Yard, an campus caf\'e seating area in Manhattan, a riverside park in Queens, and an outdoor commercial seating area in the Bronx.}
+  \label{fig:teaser}
+\end{teaserfigure}
+
+\maketitle
+
+% Basemap credit for Fig.~\ref{fig:teaser}: required by the OpenStreetMap
+% ODbL and CARTO's basemap terms. Unnumbered footnote on the first page.
+
+
+\input{01intro}
+\input{02relatedwork}
+\input{03method}
+\input{04findings}
+\input{05discussion}
+\input{06limitations}
+\input{07conclusion}
+
+
+
+
+\bibliographystyle{ACM-Reference-Format}
+% Separate reference entries for easier scanning in the review manuscript.
+\setlength{\bibsep}{4pt plus 1pt minus 1pt}
+\bibliography{reference}
+
+%% Appendix: goes after the bibliography (acmart convention).
+\input{08appendix}
+
+\end{document}
